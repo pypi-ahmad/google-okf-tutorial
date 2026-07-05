@@ -1,0 +1,20 @@
+[project]
+name = "google-okf-tutorial"
+version = "0.1.0"
+description = "Zero-to-mastery OKF (Open Knowledge Format) tutorial: local LLM enrichment agent + RAG discovery agent over a real e-commerce dataset"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "faiss-cpu>=1.14.3",
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "kagglehub>=1.0.2",
+    "loguru>=0.7.3",
+    "nbformat>=5.10.4",
+    "numpy>=2.5.1",
+    "ollama>=0.6.2",
+    "pandas>=3.0.3",
+    "pyvis>=0.3.2",
+    "pyyaml>=6.0.3",
+    "tqdm>=4.68.3",
+]
