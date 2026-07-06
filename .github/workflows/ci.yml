@@ -16,4 +16,4 @@ jobs:
           python-version: "3.12"
 
       - name: Run repo checks (no network, no secrets)
-        run: bash scripts/smoke.sh
+        run: python .github/scripts/ci_check.py
