@@ -21,6 +21,7 @@ Every number in this README is copied from an executed cell output, not estimate
 - [Repository structure](#repository-structure)
 - [Prerequisites](#prerequisites)
 - [Running it](#running-it)
+- [Paired side-by-side comparison](#paired-side-by-side-comparison)
 - [License](#license)
 
 ## Why this exists
@@ -139,6 +140,15 @@ Execute both notebooks headlessly and write executed copies to `artifacts/`:
 
 ```bash
 bash scripts/e2e.sh
+```
+
+### Paired Side-by-Side Comparison
+
+Run the same 14-question eval set across OKF RAG, flat simple RAG, and flat agentic RAG.
+Outputs: `artifacts/paired_eval_report.md` (git-ignored) and `reports/paired_eval_report.md` (committed snapshot).
+
+```bash
+uv run python scripts/paired_eval.py
 ```
 
 ## License

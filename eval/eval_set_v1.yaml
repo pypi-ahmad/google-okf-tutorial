@@ -1,0 +1,61 @@
+# Canonical paired eval set used by scripts/paired_eval.py
+# Source of truth: the 14-question eval_set embedded in agentic_rag_chromadb.ipynb.
+version: v1
+items:
+  - q: "What columns does the orders table have?"
+    expected: ["tables/orders"]
+    answerable: true
+    category: direct
+  - q: "What is the average order value?"
+    expected: ["references/metrics/avg_order_value"]
+    answerable: true
+    category: direct
+  - q: "What is the distribution of payment types?"
+    expected: ["references/metrics/payment_type_distribution"]
+    answerable: true
+    category: direct
+  - q: "How can product category names be translated to English?"
+    expected: ["tables/category_translation"]
+    answerable: true
+    category: direct
+  - q: "How much do customers typically spend per basket?"
+    expected: ["references/metrics/avg_order_value"]
+    answerable: true
+    category: paraphrase
+  - q: "What fraction of shipments arrive behind schedule?"
+    expected: ["references/metrics/late_delivery_rate"]
+    answerable: true
+    category: paraphrase
+  - q: "Are Brazilian customers happy with their purchases based on ratings?"
+    expected: ["references/metrics/avg_review_score", "references/metrics/review_score_distribution"]
+    answerable: true
+    category: paraphrase
+  - q: "If I know a product's category in Portuguese, how do I find its seller's city?"
+    expected: ["tables/category_translation", "tables/order_items", "tables/sellers"]
+    answerable: true
+    category: multi-hop
+  - q: "How would I compute total revenue per seller?"
+    expected: ["tables/order_items", "tables/sellers", "tables/order_payments"]
+    answerable: true
+    category: multi-hop
+  - q: "Which table tells me both a customer's zip code and their approximate map coordinates?"
+    expected: ["tables/customers", "tables/geolocation"]
+    answerable: true
+    category: multi-hop
+  - q: "seller performance"
+    expected: ["tables/sellers", "tables/order_items"]
+    answerable: true
+    category: vague
+  - q: "payment methods"
+    expected: ["references/metrics/payment_type_distribution", "tables/order_payments"]
+    answerable: true
+    category: vague
+  - q: "What is the customer's email address or phone number?"
+    expected: []
+    answerable: false
+    category: distractor
+  - q: "What was Olist's total company revenue in 2020?"
+    expected: []
+    answerable: false
+    category: distractor
+

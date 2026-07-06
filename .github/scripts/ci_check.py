@@ -43,6 +43,9 @@ def main() -> int:
         REPO_ROOT / "google_okf_zero_to_mastery.ipynb",
         REPO_ROOT / "agentic_rag_chromadb.ipynb",
         REPO_ROOT / "scripts" / "e2e.sh",
+        REPO_ROOT / "scripts" / "paired_eval.py",
+        REPO_ROOT / "eval" / "eval_set_v1.yaml",
+        REPO_ROOT / "reports" / "paired_eval_report.md",
         REPO_ROOT / "DATA_LICENSE.md",
     ]
     for p in required_files:
