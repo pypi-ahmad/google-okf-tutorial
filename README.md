@@ -19,6 +19,7 @@ Every number in this README is copied from an executed cell output, not estimate
 - [Notebook 2: Agentic RAG and ChromaDB](#notebook-2-agentic-rag-and-chromadb)
 - [OKF vs RAG and VectorDB](#okf-vs-rag-and-vectordb)
 - [Repository structure](#repository-structure)
+- [Prerequisites](#prerequisites)
 - [Running it](#running-it)
 - [License](#license)
 
@@ -112,12 +113,18 @@ google-okf-tutorial/
 └── bundle/                            # generated at runtime by notebook 1, git-ignored
 ```
 
+## Prerequisites
+
+- Python 3.12+
+- `uv` installed
+- Kaggle credentials available: `~/.kaggle/kaggle.json` OR `KAGGLE_USERNAME` + `KAGGLE_KEY`
+- Ollama installed and running locally at `http://127.0.0.1:11434`
+- Local models pulled: `ollama pull qwen3.5:4b` and `ollama pull nomic-embed-text`
+
 ## Running it
 
 ```bash
 uv sync
-ollama pull qwen3.5:4b
-ollama pull nomic-embed-text
 uv run jupyter lab google_okf_zero_to_mastery.ipynb   # notebook 1
 uv run jupyter lab agentic_rag_chromadb.ipynb         # notebook 2 (standalone)
 ```
@@ -126,8 +133,16 @@ Kaggle credentials must be available (`~/.kaggle/kaggle.json` or `KAGGLE_USERNAM
 
 Notebook 1 regenerates `bundle/` (the produced OKF knowledge base, including the interactive `viz.html` graph) — git-ignored since it's a reproducible build artifact, not source. Notebook 2 uses an ephemeral (in-memory) ChromaDB collection that exists only for the notebook's runtime; nothing persists to disk.
 
+### Headless E2E (recommended)
+
+Execute both notebooks headlessly and write executed copies to `artifacts/`:
+
+```bash
+bash scripts/e2e.sh
+```
+
 ## License
 
 The **code** in this repository (notebooks, configuration) is licensed under the [MIT License](LICENSE).
 
-The **Olist dataset** is CC BY-NC-SA 4.0 (verified via the Kaggle API's `dataset-metadata.json`, not assumed) — non-commercial, share-alike, attribution required. It is downloaded at runtime and never redistributed in this repository. The generated `bundle/` directory is a derived documentation artifact for **educational use only** and is git-ignored, so it is never distributed as part of this repo either.
+The **Olist dataset** is CC BY-NC-SA 4.0 — non-commercial, share-alike, attribution required. It is downloaded at runtime and never redistributed in this repository. See [DATA_LICENSE.md](DATA_LICENSE.md).
