@@ -17,7 +17,7 @@ accompanies two fully-executed Jupyter notebooks and a standalone comparison rep
   agent-consumable knowledge bundle.
 - `agentic_rag_chromadb.ipynb` — the traditional alternative: no knowledge-structuring layer, flat
   text chunks in ChromaDB, consumed by both simple and agentic (tool-calling) retrieval.
-- `OKF_vs_RAG_Comparison.md`/`.pdf` — a focused, standalone comparison of the two approaches.
+- `OKF_vs_RAG_Comparison.md` — a focused, standalone comparison of the two approaches.
 
 Every number in this handbook is copied from an executed cell output in one of the two notebooks,
 not estimated or reconstructed from memory.
@@ -377,7 +377,7 @@ questions hit the iteration cap.
 
 # Part V — OKF vs. RAG+VectorDB: Summary
 
-A full, standalone treatment lives in `OKF_vs_RAG_Comparison.md`/`.pdf`. In brief: **OKF is what you
+A full, standalone treatment lives in `OKF_vs_RAG_Comparison.md`. In brief: **OKF is what you
 retrieve *from*; RAG is *how* you retrieve it.** They are not competitors. OKF is a storage/authoring
 answer — durable, versioned, human-*and*-agent-curated, checkably well-formed. Flat RAG+VectorDB is
 a consumption-layer answer — fast to stand up over content nobody structured on purpose. This

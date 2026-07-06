@@ -5,3 +5,5 @@ __pycache__/
 bundle/
 artifacts/
 .claude/
+.agents/
+.codex/
