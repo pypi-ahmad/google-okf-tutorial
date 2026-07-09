@@ -1,0 +1,3 @@
+# Datasets
+
+- **olistbr/brazilian-ecommerce**: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce — Dataset**: [Olist Brazilian E-Commerce Public Dataset] — real, anonymized, ~100k orders, 9 relational tables, CC BY-NC-SA 4.0 — downloaded live from Kaggle by both notebooks, never committed to this repo. Found in: `HANDBOOK.md`, `OKF_vs_RAG_Comparison.md`, `README.md`, `agentic_rag_chromadb.ipynb`, `google_okf_zero_to_mastery.ipynb`, `reports/paired_eval_report.md`, ...
